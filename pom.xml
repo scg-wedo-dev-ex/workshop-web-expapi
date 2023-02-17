@@ -29,6 +29,9 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
+				<configuration>
+					<classifier>mule-application</classifier>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
@@ -42,17 +45,17 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>cb2a4d97-b91a-47bb-9eb0-9a97b16ff2a5</groupId>
-			<artifactId>workshop-github-web-exp-spec</artifactId>
-			<version>1.0.1</version>
-			<classifier>raml</classifier>
-			<type>zip</type>
-		</dependency>
-		<dependency>
 			<groupId>org.mule.modules</groupId>
 			<artifactId>mule-apikit-module</artifactId>
 			<version>1.8.1</version>
 			<classifier>mule-plugin</classifier>
+		</dependency>
+		<dependency>
+			<groupId>cb2a4d97-b91a-47bb-9eb0-9a97b16ff2a5</groupId>
+			<artifactId>workshop-github-web-exp-spec</artifactId>
+			<version>1.0.3</version>
+			<classifier>raml</classifier>
+			<type>zip</type>
 		</dependency>
 	</dependencies>
 
