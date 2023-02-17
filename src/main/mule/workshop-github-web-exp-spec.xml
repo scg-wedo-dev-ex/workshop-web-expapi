@@ -132,7 +132,7 @@ output application/json
 ---
 payload map ((item, i) -> {
 	id: item.id,
-	nodeId: item.node_id,
+	nodeId: item.node_id replace /^[\w]{7}/ with "*******",
   	name: item.name,
   	"private": item."private",
  	sshUrl: item.ssh_url,
