@@ -125,7 +125,7 @@ output application/json
 		<http:request method="GET" doc:name="Request" doc:id="352a4dd7-6a7f-491a-a5ca-ddd66ee34ce1" config-ref="ProcessAPIRequest" path='#["/coding-day/api/v1/github/$(attributes.queryParams.org default "scg-wedo")"]'>
 			<http:query-params><![CDATA[#[attributes.queryParams - "org"]]]></http:query-params>
 		</http:request>
-		<ee:transform doc:name="" doc:id="9597d858-6ff0-4d2f-a99f-d34b196abf8d" >
+		<ee:transform doc:name="res-web" doc:id="9597d858-6ff0-4d2f-a99f-d34b196abf8d" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
 output application/json
