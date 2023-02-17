@@ -125,18 +125,22 @@ output application/json
 		<http:request method="GET" doc:name="Request" doc:id="352a4dd7-6a7f-491a-a5ca-ddd66ee34ce1" config-ref="ProcessAPIRequest" path='#["/coding-day/api/v1/github/$(attributes.queryParams.org default "scg-wedo")"]'>
 			<http:query-params><![CDATA[#[attributes.queryParams - "org"]]]></http:query-params>
 		</http:request>
-		<ee:transform doc:name="Transform Message" doc:id="e20e6f81-807d-4d2c-a717-276f0980060e" >
+		<ee:transform doc:name="" doc:id="9597d858-6ff0-4d2f-a99f-d34b196abf8d" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
 output application/json
 ---
 payload map ((item, i) -> {
-	nodeId: item.node_id,
+	id: item.id,
   	name: item.name,
-  	"private": item."private",
- 	sshUrl:item.ssh_url,
- 	size: item.size,
- 	pushedAt: item.pushed_at,
+  	full_name: item.full_name,
+ 	description:item.description,
+ 	url: item.url,
+ 	html_url: item.html_url,
+ 	language: item.language,
+ 	pushed_at: item.pushed_at,
+ 	created_at: item.created_at,
+    updated_at: item.updated_at,
 })]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
